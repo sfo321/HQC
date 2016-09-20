@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssertionsHomework.cs" />
+    <Compile Include="BinarySearch.cs" />
+    <Compile Include="SelectionSort.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

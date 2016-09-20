@@ -1,0 +1,77 @@
+﻿using ExceptionsHomework.Utils;
+
+namespace ExceptionsHomework.Models
+{
+
+    public class ExamResult
+    {
+        private int grade;
+        private int minGrade;
+        private int maxGrade;
+        private string comments;
+
+        public ExamResult(int grade, int minGrade, int maxGrade, string comments)
+        {
+            this.Grade = grade;
+            this.MinGrade = minGrade;
+            this.MaxGrade = maxGrade;
+            this.Comments = comments;
+        }
+
+        public int Grade
+        {
+            get
+            {
+                return this.grade;
+            }
+            private set
+            {
+                Validator.ValidatefNumberNonNegative(value, "Grade");
+                Validator.ValidateIfNumberInRange(value, minGrade, maxGrade, "Grade");
+
+                this.grade = value;
+            }
+        }
+        public int MinGrade
+        {
+            get
+            {
+                return this.minGrade;
+            }
+            private set
+            {
+                Validator.ValidatefNumberNonNegative(value, "minGrade");
+                Validator.ValidateIfNumberInRange(value, minGrade, maxGrade, "minGrade");
+
+                this.minGrade = value;
+            }
+        }
+        public int MaxGrade
+        {
+            get
+            {
+                return this.maxGrade;
+            }
+            private set
+            {
+                Validator.ValidatefNumberNonNegative(value, "maxGrade");
+                Validator.ValidateIfNumberInRange(value, minGrade, maxGrade, "maxGrade");
+
+                this.maxGrade = value;
+            }
+        }
+        public string Comments
+        {
+            get
+            {
+                return this.comments;
+            }
+            set
+            {
+                Validator.ValidateString(value, "Comments");
+
+                this.comments = value;
+            }
+        }
+    }
+}
